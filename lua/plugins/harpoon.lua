@@ -1,39 +1,55 @@
 return {
-  "nvim-telescope/telescope.nvim",
+  "ThePrimeagen/harpoon",
+  branch = "harpoon2",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "debugloop/telescope-undo.nvim",
-    "isak102/telescope-git-file-history.nvim",
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
-  lazy = false,
-  opts = {
-    pickers = {
-      find_files = {
-        hidden = true,
+  keys = function()
+    local harpoon = require("harpoon")
+
+    return {
+      {
+        "<leader>a",
+        function()
+          harpoon:list():add()
+        end,
+        desc = "Add to harpoon",
       },
-      git_files = {
-        hidden = true,
+      {
+        "<C-e>",
+        function()
+          harpoon.ui:toggle_quick_menu(harpoon:list())
+        end,
+        desc = "Toggle harpoon menu",
       },
-    },
-    defaults = {
-      file_ignore_patterns = {
-        "node_modules/*",
+      {
+        "<leader>1",
+        function()
+          harpoon:list():select(1)
+        end,
+        desc = "Go to 1",
       },
-    },
-    extensions = {
-      fzf = {},
-    },
-  },
-  config = function(_, opts)
-    require("telescope").setup(opts)
-    require("telescope").load_extension("undo")
-    require("telescope").load_extension("fzf")
-    require("telescope").load_extension("git_file_history")
+      {
+        "<leader>2",
+        function()
+          harpoon:list():select(2)
+        end,
+        desc = "Go to 2",
+      },
+      {
+        "<leader>3",
+        function()
+          harpoon:list():select(3)
+        end,
+        desc = "Go to 3",
+      },
+      {
+        "<leader>4",
+        function()
+          harpoon:list():select(4)
+        end,
+        desc = "Go to 4",
+      },
+    }
   end,
-  keys = {
-    { "<C-p>",      "<cmd>Telescope git_files<cr>",  desc = "Find files" },
-    { "<leader>fa", "<cmd>Telescope find_files<cr>", desc = "Find all files" },
-    { "<leader>fi", "<cmd>Telescope live_grep<cr>",  desc = "Find in files" },
-  },
 }
