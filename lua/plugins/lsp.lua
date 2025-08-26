@@ -5,6 +5,7 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
+			"nvim-telescope/telescope.nvim", -- Might be possible to exchange this for snacks picker?
 		},
 		config = function()
 			vim.diagnostic.config({
@@ -59,6 +60,7 @@ return {
 					})
 					vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { buffer = 0, desc = "Rename" })
 					vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = 0, desc = "Code actions" })
+					vim.keymap.set("n", "<C-.>", vim.lsp.buf.code_action, { buffer = 0, desc = "Code actions" })
 					vim.keymap.set(
 						{ "n", "x" },
 						"<leader>cf",
@@ -138,6 +140,16 @@ return {
 							experimental = {
 								completion = {
 									entriesLimit = 3,
+								},
+							},
+						})
+
+						require("lspconfig").gopls.setup({
+							settings = {
+								gopls = {
+									analyses = {
+										useany = false, -- disable "interface{} → any" warning
+									},
 								},
 							},
 						})

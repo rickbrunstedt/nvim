@@ -8,6 +8,8 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
 
+vim.keymap.set({ "i", "n", "v" }, "<C-s>", "<cmd>write<cr>", { desc = "Save file" })
+
 -- Next errors i think.. maybe more?
 vim.keymap.set("n", "<]-d>", ":cnext<CR>", opts)
 vim.keymap.set("n", "<[-d>", ":cprevious<CR>", opts)
@@ -19,21 +21,3 @@ vim.keymap.set("n", "<[-d>", ":cprevious<CR>", opts)
 -- 	{ "<leader>w", proxy = "<c-w>", group = "Windows" }, -- proxy to window mappings
 -- 	{ "<leader>c", group = "Code" },
 -- })
-
-vim.keymap.set("n", "<leader>R", function()
-	vim.ui.input({ prompt = "Command: " }, function(command)
-		local dir = vim.fn.expand("%:p:h")
-		if command then -- check for nil in case user cancels
-			vim.cmd(string.format("!cd %s && %s", dir, command))
-		end
-	end)
-end, { desc = "command something?!" })
-
-vim.keymap.set("v", "<leader>R", function()
-	vim.ui.input({ prompt = "Command: " }, function(command)
-		local dir = vim.fn.expand("%:p:h")
-		if command then -- check for nil in case user cancels
-			vim.cmd(string.format("!cd %s && %s", dir, command))
-		end
-	end)
-end, { desc = "command something?!" })
