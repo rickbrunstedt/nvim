@@ -9,8 +9,9 @@ return {
 				-- go_in = "l",
 				-- go_in_plus = "<Backspace>",
 				go_in_plus = "<CR>",
-				-- go_out = "h",
-				-- go_out_plus = "H",
+				-- go_out = { "-", "h" },
+				go_out = "h",
+				go_out_plus = "-",
 				-- mark_goto = "'",
 				-- mark_set = "m",
 				-- reset = "<BS>",
@@ -21,7 +22,6 @@ return {
 				-- trim_right = ">",
 			},
 		})
-
 		-- Keymap: press `-` to open MiniFiles at current file
 		vim.keymap.set("n", "-", function()
 			local buf_path = vim.api.nvim_buf_get_name(0)
