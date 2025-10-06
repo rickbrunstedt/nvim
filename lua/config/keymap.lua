@@ -10,14 +10,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 vim.keymap.set({ "i", "n", "v" }, "<C-s>", "<cmd>write<cr>", { desc = "Save file" })
 
--- Next errors i think.. maybe more?
 vim.keymap.set("n", "<]-d>", ":cnext<CR>", opts)
 vim.keymap.set("n", "<[-d>", ":cprevious<CR>", opts)
--- vim.keymap.set("n", "<C-j>", ":cnext<CR>", opts)
--- vim.keymap.set("n", "<C-k>", ":cprevious<CR>", opts)
 
--- local wk = require("which-key")
--- wk.add({
--- 	{ "<leader>w", proxy = "<c-w>", group = "Windows" }, -- proxy to window mappings
--- 	{ "<leader>c", group = "Code" },
--- })
+vim.keymap.set("n", "<C-j>", ":cnext<CR>", opts)
+vim.keymap.set("n", "<C-k>", ":cprevious<CR>", opts)

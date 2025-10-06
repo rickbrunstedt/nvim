@@ -31,7 +31,19 @@ return {
 		{
 			"<leader>?",
 			function()
-				require("which-key").show({ global = false })
+				-- require("which-key").show({ global = false })
+
+				local wk = require("which-key")
+				wk.show({ global = false })
+				wk.add({
+					{ "<leader>w", proxy = "<c-w>", group = "Windows" }, -- proxy to window mappings
+					{ "<leader>c", group = "Code" },
+					{ "<leader>f", group = "Find" },
+					{ "<leader>p", group = "Project" },
+					{ "<leader>s", group = "Search" },
+					{ "<leader>v", group = "View" },
+					{ "<leader>u", group = "Update or toggle" },
+				})
 			end,
 			desc = "Buffer Local Keymaps (which-key)",
 		},

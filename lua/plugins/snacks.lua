@@ -14,7 +14,7 @@ return {
 			enabled = false,
 		},
 		notifier = {
-			enabled = true,
+			enabled = false,
 			timeout = 3000,
 		},
 		picker = {
@@ -56,13 +56,14 @@ return {
 			-- "<leader>,",
 			"<leader><space>",
 			function()
+				-- Snacks.picker.recent()
 				Snacks.picker.buffers({
-					-- hidden = false,
-					-- nofile = false,
-					sort_lastused = true,
-					-- modified = false,
-					-- unloaded = false,
 					current = false,
+					sort_lastused = true,
+					-- hidden = true,
+					-- nofile = false,
+					-- modified = false,
+					-- unloaded = true,
 				})
 			end,
 			desc = "Buffers",
@@ -96,18 +97,6 @@ return {
 			desc = "File Explorer",
 		},
 		{
-			"-",
-			function()
-				Snacks.explorer()
-				-- Snacks.explorer({
-				-- 	win = {},
-				-- 	layouts = {},
-				-- })
-			end,
-			desc = "File Explorer",
-		},
-		-- find
-		{
 			"<leader>fb",
 			function()
 				Snacks.picker.buffers()
@@ -127,14 +116,19 @@ return {
 		{
 			"<leader>ff",
 			function()
-				Snacks.picker.files()
+				local root = Snacks.git.get_root()
+				Snacks.picker.files({
+					cwd = root,
+				})
 			end,
 			desc = "Find Files",
 		},
 		{
 			"<leader>fF",
 			function()
+				local root = Snacks.git.get_root()
 				Snacks.picker.files({
+					cwd = root,
 					hidden = true,
 					ignored = true,
 				})

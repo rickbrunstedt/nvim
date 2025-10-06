@@ -1,8 +1,12 @@
 return {
 	"echasnovski/mini.nvim",
+	version = false,
+
 	config = function()
 		require("mini.ai").setup()
+		require("mini.diff").setup()
 		require("mini.surround").setup()
+		-- require("mini.notify").setup()
 		require("mini.files").setup({
 			mappings = {
 				-- close = "q",
@@ -22,6 +26,7 @@ return {
 				-- trim_right = ">",
 			},
 		})
+
 		-- Keymap: press `-` to open MiniFiles at current file
 		vim.keymap.set("n", "-", function()
 			local buf_path = vim.api.nvim_buf_get_name(0)
