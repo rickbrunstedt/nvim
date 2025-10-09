@@ -1,3 +1,10 @@
+-- ---@type Snacks
+-- local Snacks = require("snacks")
+
+-- Or if that doesn't work, try:
+-- ---@module 'snacks'
+-- local Snacks = require("snacks")
+
 return {
 	"folke/snacks.nvim",
 	priority = 1000,
@@ -508,26 +515,21 @@ return {
 			desc = "Dismiss All Notifications",
 		},
 		{
-			"<c-a-t>",
-			function()
-				Snacks.terminal.toggle()
-			end,
-			desc = "Toggle Terminal",
-		},
-		{
 			"<c-/>",
 			function()
-				Snacks.terminal()
+				Snacks.terminal.toggle()
 			end,
 			mode = { "n", "v", "t" },
 			desc = "Toggle Terminal",
 		},
 		{
+			--- "<c-_>" ends up being "ctrl + /" in terminals
 			"<c-_>",
 			function()
-				Snacks.terminal()
+				Snacks.terminal.toggle()
 			end,
-			desc = "which_key_ignore",
+			mode = { "n", "v", "t" },
+			desc = "Toggle Terminal",
 		},
 		{
 			"]]",
