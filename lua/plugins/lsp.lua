@@ -72,6 +72,22 @@ return {
 		vim.lsp.config("vtsls", {
 			capabilities = capabilities,
 			init_options = { hostInfo = "neovim" },
+			settings = {
+				typescript = {
+					preferences = {
+						-- importModuleSpecifierPreference = "relative", -- prefer local relative imports
+						-- importModuleSpecifierEnding = "auto",
+						-- localityBonus = true,
+					},
+				},
+				javascript = {
+					preferences = {
+						-- importModuleSpecifierPreference = "relative",
+						-- importModuleSpecifierEnding = "auto",
+						-- localityBonus = true,
+					},
+				},
+			},
 		})
 
 		vim.lsp.enable("lua_ls")

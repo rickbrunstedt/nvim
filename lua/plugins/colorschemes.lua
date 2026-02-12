@@ -49,21 +49,32 @@ return {
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
-		-- lazy = false,
-		-- config = function()
-		-- 	require("catppuccin").setup()
-		-- 	vim.cmd([[colorscheme catppuccin]])
-		-- end,
+		lazy = false,
+		config = function()
+			require("catppuccin").setup({
+				flavour = "frappe", -- latte, frappe, macchiato, mocha
+			})
+			vim.cmd([[colorscheme catppuccin]])
+		end,
 	},
 	{
 		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1001,
-		config = function()
-			require("tokyonight").setup({
-				style = "moon",
-			})
-			vim.cmd([[colorscheme tokyonight]])
-		end,
+		-- lazy = false,
+		-- priority = 1001,
+		-- config = function()
+		-- 	require("tokyonight").setup({
+		-- 		style = "moon",
+		-- 	})
+		-- 	vim.cmd([[colorscheme tokyonight]])
+		-- end,
 	},
+	-- {
+	-- 	"nkxxll/ghostty-default-style-dark.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("ghostty-default-style-dark").setup({})
+	-- 		vim.cmd.colorscheme("ghostty-default-style-dark")
+	-- 	end,
+	-- },
 }
