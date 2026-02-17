@@ -10,7 +10,7 @@ return {
 		-- OR use snacks.nvim's image module:
 		-- "folke/snacks.nvim",
 	},
-	lazy = false, -- neo-tree will lazily load itself
+	lazy = true, -- neo-tree will lazily load itself
 	---@module "neo-tree"
 	---@type neotree.Config?
 	opts = {
