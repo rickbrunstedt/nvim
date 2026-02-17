@@ -24,7 +24,8 @@ return {
 		},
 	},
 	keys = {
-		{ "<C-n>", ":Neotree toggle left filesystem reveal<CR>", desc = "Open file tree", silent = true },
+		{ "<C-n>",     ":Neotree toggle left filesystem reveal<CR>", desc = "Open file tree", silent = true },
+		{ "<leader>e", ":Neotree toggle left filesystem reveal<CR>", desc = "Open file tree", silent = true },
 		-- { '-',     ':Neotree float reveal_force_cwd<CR>',        desc = 'Open file tree', silent = true },
 		-- { '\\',    ':Neotree float reveal_force_cwd<cr>',        desc = 'Open file tree', silent = true },
 	},

@@ -3,7 +3,7 @@ require("config.set")
 require("config.keymap")
 require("config.terminal")
 -- Plugins
-require("plugins.mini")
+-- require("plugins.mini")
 
 -- override vscode settings
 -- local opts = { noremap = true, silent = true }

@@ -14,7 +14,7 @@ return {
 				-- go_in_plus = "<Backspace>",
 				go_in_plus = "<CR>",
 				-- go_out = { "-", "h" },
-				go_out = "h",
+				-- go_out = "h",
 				go_out_plus = "-",
 				-- mark_goto = "'",
 				-- mark_set = "m",

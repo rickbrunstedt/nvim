@@ -15,3 +15,9 @@ vim.keymap.set("n", "<[-d>", ":cprevious<CR>", opts)
 
 vim.keymap.set("n", "<C-j>", ":cnext<CR>", opts)
 vim.keymap.set("n", "<C-k>", ":cprevious<CR>", opts)
+
+function nmap(keymap, cmdOrFunc, opts)
+  vim.keymap.set("n", keymap, cmdOrFunc, opts)
+end
+
+nmap("<leader>q", ":quitall<CR>", opts)
