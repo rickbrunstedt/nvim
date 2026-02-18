@@ -102,9 +102,10 @@ return {
 				"vtsls",
 				"gopls",
 				"zls",
-				-- "lua-language-server",
-				-- "stylua",
-				-- "biome",
+				"lua-language-server",
+				"stylua",
+				"biome",
+				"prettierd",
 			},
 		})
 	end,

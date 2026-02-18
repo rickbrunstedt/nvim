@@ -32,12 +32,12 @@ return {
       desc = "FFFind files",
     },
     {
-      "fg",
+      "<leader>fg",
       function() require('fff').live_grep() end,
       desc = 'LiFFFe grep',
     },
     {
-      "fz",
+      "<leader>fz",
       function()
         require('fff').live_grep({
           grep = {
@@ -46,7 +46,15 @@ return {
         })
       end,
       desc = 'Live fffuzy grep',
-    }
+    },
+    {
+      "<leader>fc",
+      function()
+        require('fff').find_files_in_dir(vim.fn.stdpath('config'))
+      end,
+      desc = 'Find in config',
+    },
+
 
     -- require('fff').find_files()                         -- Find files in current directory
     -- require('fff').find_in_git_root()                   -- Find files in the current git repository

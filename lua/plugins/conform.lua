@@ -11,11 +11,12 @@ return {
 			biome = {
 				require_cwd = false,
 			},
+
 			-- prettier = {
 			-- 	require_cwd = true,
 			-- },
 			prettierd = {
-				require_cwd = true,
+				require_cwd = false,
 			},
 		},
 		formatters_by_ft = {
